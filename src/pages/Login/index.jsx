@@ -31,7 +31,7 @@ const Login = () => {
     if (data) {
       setIp(data.visitorId);
     }
-  }, [data]);
+  }, []);
 
   const onSubmit = async (result) => {
 
