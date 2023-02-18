@@ -1,0 +1,51 @@
+.modal {
+  position: absolute;
+  padding: 25px 100px;
+  background-color: #ffffff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 75%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 70vh;
+  overflow-y: scroll;
+  &_btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .modalOptions {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    gap: 60px;
+    border-bottom: 1px solid rgba(0,0,0,0.5);
+    padding-bottom: 25px;
+  }
+
+  .optionList {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    .elasticsearch{
+      text-align: center;
+      margin: 10px 0px;
+      margin-bottom: 20px;
+      h1{
+        margin: 15px 0px;
+      }
+    }
+
+    .firstOption {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(5, 1fr);
+      grid-column-gap: 40px;
+      grid-row-gap: 30px;
+    }
+  }
+}

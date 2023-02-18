@@ -1,0 +1,52 @@
+.courseMainBlock {
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  display: flex;
+  gap: 15px;
+  width: 700px;
+  height: auto;
+  padding: 14px 10px;
+  margin: 25px 0;
+  .courseInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+    width: 500px;
+    h2 {
+      color: #065683;
+    }
+    p {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 15px;
+    }
+  }
+  .buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 80px;
+    text-decoration: none;
+    img {
+      margin-top: 20px;
+      margin-right: 10px;
+      height: 15px;
+      transition: 0.2s ease-in-out;
+      cursor: pointer;
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+    button {
+      box-sizing: border-box;
+      padding: 5px 50px;
+      border: 1px solid #0d4e6c;
+      transition: 0.2s ease-in-out;
+      cursor: pointer;
+      background-color: white;
+      &:hover {
+        transform: scale(1.05);
+        background-color: #257ba2;
+        color: white;
+      }
+    }
+  }
+}

@@ -1,0 +1,63 @@
+.admin {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  a {
+    text-decoration: none;
+  }
+  .header {
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(153, 153, 186);
+    padding: 12px 18px;
+    h2 {
+      color: azure;
+    }
+  }
+  .bottom {
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+    .leftBar {
+      position: relative;
+      min-height: 100vh;
+      background-color: rgb(109, 109, 109);
+      ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 15px;
+      }
+      li {
+        list-style: none;
+        padding: 15px;
+        margin-bottom: 15px;
+        cursor: pointer;
+        width: 400px;
+        text-align: center;
+        color: #ffffff88;
+      }
+    }
+
+    .infoSide {
+      width: 100%;
+    }
+  }
+}
+
+.btn {
+  width: 80%;
+  padding: 15px;
+}
+
+
+.createCourse{
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  margin: 20px 25px;
+  gap: 20px;
+  justify-content: center;
+  border-bottom: 1px solid rgba(0,0,0,0.5);
+  padding: 12px 20px;
+}

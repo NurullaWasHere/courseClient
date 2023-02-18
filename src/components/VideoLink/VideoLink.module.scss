@@ -1,0 +1,21 @@
+.videoLinkBlock{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 3s ease-in-out;
+    cursor: pointer;
+    margin-bottom: 25px;
+    &:hover{
+        // border: 1px solid rgba(0,0,0,0.6);
+    }
+
+    img{
+        margin-left: 10px;
+    }
+
+    p{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18px;
+        font-weight: 200;
+    }
+}

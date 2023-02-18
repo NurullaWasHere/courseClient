@@ -1,0 +1,19 @@
+.videoModal {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  height: 50vw;
+  border: 2px solid #000;
+  overflow-y: scroll;
+  text-align: center;
+  video{
+    text-align: center;
+    margin-top: 20px;
+  }
+}
