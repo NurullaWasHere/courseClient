@@ -19,7 +19,7 @@ const VideoModal = ({ open, setOpen, name }) => {
     >
       <Fade in={open}>
         <Box className={s.videoModal}>
-          <video src={`http://localhost:3008/user/courses/video/${name}`} controls controlsList="nodownload" autoPlay/>
+          <video src={`https://courseserver-production.up.railway.app/user/courses/video/${name}`} controls controlsList="nodownload" autoPlay/>
           <Typography id="spring-modal-description" sx={{ mt: 2 }}>
             {name}
           </Typography>
