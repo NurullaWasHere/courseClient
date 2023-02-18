@@ -2,7 +2,7 @@ import axios from "axios";
 
 
 const instance = axios.create({
-    baseURL: "courseserver-production.up.railway.app",
+    baseURL: "https://courseserver-production.up.railway.app",
 
 })
 
