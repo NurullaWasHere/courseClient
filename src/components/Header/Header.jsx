@@ -11,6 +11,7 @@ const Header = () => {
         <div className={s.rightHead}>
             <img src="account-icon.svg" alt="" height={35}/>
             <p>Мой аккаунт</p>
+            
         </div>
     </div>
   )

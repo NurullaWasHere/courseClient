@@ -29,13 +29,12 @@ const Login = () => {
 
   useEffect(() => {
     if (data) {
-      console.log(data);
       setIp(data.visitorId);
     }
   }, [data]);
 
   const onSubmit = async (result) => {
-    console.log(result);
+
     await axios
       .post("/user/login", {
         name: result.name,
@@ -44,7 +43,6 @@ const Login = () => {
       })
       .then((res) => {
         const { token } = res.data;
-        console.log(token);
         if(!token){
           setIsLoaded(true)
         }
