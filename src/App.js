@@ -2,20 +2,11 @@ import Login from "./pages/Login";
 import s from "./App.module.scss";
 import { Main } from "./pages/Main/Main";
 import CoursePage from "./pages/CoursePage/CoursePage";
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route} from "react-router-dom";
 import AdminPage from "./pages/AdminPage";
-import { useEffect, useLayoutEffect, useState } from "react";
 
 function App() {
-  const navigate = useNavigate();
-  const [isLogged, setIsLogged] = useState(false)
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (!token) {
-      navigate("/login");
-      setIsLogged(!isLogged)
-    }
-  });
+
 
   return (
     <div className={s.app}>
