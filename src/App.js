@@ -2,11 +2,23 @@ import Login from "./pages/Login";
 import s from "./App.module.scss";
 import { Main } from "./pages/Main/Main";
 import CoursePage from "./pages/CoursePage/CoursePage";
-import { Routes, Route} from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import AdminPage from "./pages/AdminPage";
+import { useEffect, useState } from "react";
 
 function App() {
-
+  const navigate = useNavigate();
+  const [isLogged, setIsLogged] = useState(false);
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (!token && window.location.pathname !== "/login") {
+      navigate("/login");
+      setIsLogged(!isLogged);
+    }
+    if (token && window.location.pathname === "/login") {
+      navigate("/");
+    }
+  }, [isLogged, navigate]);
 
   return (
     <div className={s.app}>
@@ -16,7 +28,6 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/admin/*" element={<AdminPage />} />
         <Route path="/admin/courses/*" element={<AdminPage />} />
-
       </Routes>
     </div>
   );

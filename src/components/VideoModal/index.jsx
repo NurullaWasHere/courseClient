@@ -1,8 +1,6 @@
 import { Fade, Modal, Typography } from "@mui/material";
 import { Box } from "@mui/system";
-import React, { useEffect, useRef, useState } from "react";
-import axios from "../../axios";
-import ReactPlayer from "react-player";
+import React from "react";
 
 import s from "./VideoModal.module.scss";
 

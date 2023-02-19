@@ -1,12 +1,13 @@
 import React from 'react'
 import s from './Header.module.scss'
 import {Link} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const Header = () => {
-
+  const navigate = useNavigate();
   const onLeave = () => {
     window.localStorage.removeItem('token');
-
+    navigate('/login');
   }
 
   return (
