@@ -7,6 +7,7 @@ import s from "./VideoModal.module.scss";
 const VideoModal = ({ open, setOpen, name }) => {
   const handleClose = () => setOpen(false);
 
+  const movName = name.replace(".mp4", ".mov");
   return (
     <Modal
       aria-labelledby="spring-modal-title"
@@ -17,7 +18,24 @@ const VideoModal = ({ open, setOpen, name }) => {
     >
       <Fade in={open}>
         <Box className={s.videoModal}>
-          <video width={320} loop muted  playsInline controls controlsList="nodownload" autoPlay><source src={`https://courseserver-production.up.railway.app/user/courses/video/${name}`} type="video/mp4"/> </video>
+          <video
+            width={320}
+            loop
+            muted
+            playsInline
+            controls
+            controlsList="nodownload"
+            autoPlay
+          >
+            <source
+              src={`https://courseserver-production.up.railway.app/user/courses/video/${name}`}
+              type="video/mp4"
+            />
+              <source
+              src={`https://courseserver-production.up.railway.app/user/courses/video/${movName}`}
+              type="video/mp4"
+            />
+          </video>
           <Typography id="spring-modal-description" sx={{ mt: 2 }}>
             {name}
           </Typography>
