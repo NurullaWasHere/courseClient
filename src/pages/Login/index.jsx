@@ -29,11 +29,7 @@ const Login = () => {
     mode: "onChange",
   });
 
-  useEffect(() => {
-    if (data) {
-      setIp(data.visitorId);
-    }
-  }, []);
+
 
   const onSubmit = async (result) => {
 
@@ -41,7 +37,7 @@ const Login = () => {
       .post("/user/login", {
         name: result.name,
         password: result.password,
-        ip: ip,
+        ip: data.visitorId,
       })
       .then((res) => {
         const { token } = res.data;
