@@ -12,7 +12,7 @@ const Login = () => {
 
   const navigate = useNavigate();
 
-  const { isLoading, error, data } = useVisitorData();
+  // const { isLoading, error, data } = useVisitorData();
   const [loading, setLoading] = useState(false);
 
 
@@ -37,7 +37,6 @@ const Login = () => {
       .post("/user/login", {
         name: result.name,
         password: result.password,
-        ip: data.visitorId,
       })
       .then((res) => {
         const { token } = res.data;
