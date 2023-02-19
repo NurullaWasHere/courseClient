@@ -1,5 +1,5 @@
 import { CircularProgress, TextField } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import s from "./Login.module.scss";
 import { useForm } from "react-hook-form";
 import axios from "../../axios";
@@ -7,19 +7,17 @@ import { useVisitorData } from "@fingerprintjs/fingerprintjs-pro-react";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const [ip, setIp] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false)
 
   const navigate = useNavigate();
 
-  // const { isLoading, error, data } = useVisitorData();
+  const {  data } = useVisitorData();
   const [loading, setLoading] = useState(false);
 
 
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm({
     defaultValues: {
@@ -37,6 +35,7 @@ const Login = () => {
       .post("/user/login", {
         name: result.name,
         password: result.password,
+        ip: data.visitorId,
       })
       .then((res) => {
         const { token } = res.data;
