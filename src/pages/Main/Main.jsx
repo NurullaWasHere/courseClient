@@ -13,6 +13,9 @@ export const Main = () => {
       const res = await axios.get("/user/courses").catch((error) => {
         navigate("/login");
       });
+      if(res.data.message === "User not found"){
+        window.localStorage.removeItem('token')
+      }
       setCourses(res.data.userCourses);
     };
 
