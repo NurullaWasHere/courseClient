@@ -8,6 +8,8 @@ const VideoModal = ({ open, setOpen, name }) => {
   const handleClose = () => setOpen(false);
 
   const movName = name.replace(".mp4", ".mov");
+  const webName = name.replace('.mp4', ".webm")
+  console.log(movName,webName)
   return (
     <Modal
       aria-labelledby="spring-modal-title"
@@ -33,7 +35,11 @@ const VideoModal = ({ open, setOpen, name }) => {
             />
               <source
               src={`https://courseserver-production.up.railway.app/user/courses/video/${movName}`}
-              type="video/mp4"
+              type="video/mov"
+            />
+              <source
+              src={`https://courseserver-production.up.railway.app/user/courses/video/${webName}`}
+              type="video/webm"
             />
           </video>
           <Typography id="spring-modal-description" sx={{ mt: 2 }}>
