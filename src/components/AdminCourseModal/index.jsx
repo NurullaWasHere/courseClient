@@ -1,11 +1,10 @@
 import * as React from "react";
 import Button from "@mui/material/Button";
-import { ButtonGroup, Modal, TextField, Typography } from "@mui/material";
+import {  Modal, TextField, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import axios from "../../axios";
 
 import s from "./AdminCourseModal.module.scss";
-import Course from "../Course/Course";
 import UserList from "../UserList";
 import VideoList from "../VideoList";
 import UserListForDelete from "../UserListForDelete";
