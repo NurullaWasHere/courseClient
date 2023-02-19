@@ -1,4 +1,4 @@
-import { TextField } from "@mui/material";
+import { CircularProgress, TextField } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import s from "./Login.module.scss";
 import { useForm } from "react-hook-form";
@@ -13,6 +13,8 @@ const Login = () => {
   const navigate = useNavigate();
 
   const { isLoading, error, data } = useVisitorData();
+  const [loading, setLoading] = useState(false);
+
 
   const {
     register,
@@ -45,6 +47,7 @@ const Login = () => {
         const { token } = res.data;
         if(!token){
           setIsLoaded(true)
+          setLoading(false);
         }
         if (token) {
           window.localStorage.setItem("token", token);
@@ -79,10 +82,11 @@ const Login = () => {
               helperText={errors.password?.message}
               type="password"
             />
-            <button type="submit"> Войти </button>
+            <button type="submit" onClick={ () => setLoading(true)}> Войти </button>
             {isLoaded && <>
               <p style={{color: "red"}}>Неверный никнейм или пароль!</p>
             </>}
+            {loading && <CircularProgress />}
           </form>
         </div>
       </div>
