@@ -1,20 +1,22 @@
 import React, { useState } from 'react'
 import s from './Storage.module.scss'
 import axios from '../../axios'
-import { Button } from '@mui/material'
+import { Button, CircularProgress } from '@mui/material'
 
 export const Storage = () => {
 
     const [formData, setFormData] = useState(null)
 
-    const [isEmpty, setIsEmpty] = useState(true);
+    const [isLoading, setIsLoading] = useState(false);
     const [done, setDone] = useState(false)
     const uploadFile = async () => {
         try{
             if(formData){
+                setIsLoading(true);
                 const res = await axios.post('/admin/uploadFile', formData);
                 if(res.data.code === 200){
                     setDone(true);
+                    setIsLoading(false);
                 }
             }
         }catch(err){
@@ -46,6 +48,7 @@ export const Storage = () => {
             {done && <>
                 <p>Файл успешно загружен!</p>
             </>}
+            {isLoading && <CircularProgress />}
         </div>
         <div className={s.delete}>
 
