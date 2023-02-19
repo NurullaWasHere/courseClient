@@ -40,6 +40,7 @@ const Login = () => {
       .then((res) => {
         const { token } = res.data;
         if(!token){
+          window.localStorage.removeItem('token');
           setIsLoaded(true)
           setLoading(false);
         }
