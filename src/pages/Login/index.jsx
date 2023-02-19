@@ -83,6 +83,7 @@ const Login = () => {
               <p style={{color: "red"}}>Неверный никнейм или пароль!</p>
             </>}
             {loading && <CircularProgress />}
+            {error && <><p>{error}</p></>}
           </form>
         </div>
       </div>
