@@ -1,6 +1,6 @@
 import { Fade, Modal, Typography } from "@mui/material";
 import { Box } from "@mui/system";
-import React from "react";
+import React, { useRef } from "react";
 
 import s from "./VideoModal.module.scss";
 
@@ -9,7 +9,6 @@ const VideoModal = ({ open, setOpen, name }) => {
 
   const movName = name.replace(".mp4", ".mov");
   const webName = name.replace('.mp4', ".webm")
-  console.log(movName,webName)
   return (
     <Modal
       aria-labelledby="spring-modal-title"
@@ -32,14 +31,6 @@ const VideoModal = ({ open, setOpen, name }) => {
             <source
               src={`https://courseserver-production.up.railway.app/user/courses/video/${name}`}
               type="video/mp4"
-            />
-              <source
-              src={`https://courseserver-production.up.railway.app/user/courses/video/${movName}`}
-              type="video/mov"
-            />
-              <source
-              src={`https://courseserver-production.up.railway.app/user/courses/video/${webName}`}
-              type="video/webm"
             />
           </video>
           <Typography id="spring-modal-description" sx={{ mt: 2 }}>
