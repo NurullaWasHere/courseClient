@@ -13,6 +13,7 @@ const CoursePage = () => {
     async function fetchVideos(){
       const res = await axios.get(`/user/courses/${courseId}`);
         setVideo(res.data.videos);
+        console.log(res.data.videos)
     }
     fetchVideos();
   }, [courseId])
@@ -23,7 +24,7 @@ const CoursePage = () => {
       <div className={s.data}>
         <h2>Контент: </h2>
         {videos.map( elem => {
-          return <VideoLink key={elem.id} name={elem.name}/>
+          return <VideoLink key={elem.id} name={elem.name} link={elem.link}/>
         })}
       </div>
     </div>

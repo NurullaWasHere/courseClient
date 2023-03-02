@@ -4,11 +4,12 @@ import React, { useRef } from "react";
 
 import s from "./VideoModal.module.scss";
 
-const VideoModal = ({ open, setOpen, name }) => {
+const VideoModal = ({ open, setOpen, name, link }) => {
   const handleClose = () => setOpen(false);
 
   const movName = name.replace(".mp4", ".mov");
-  const webName = name.replace('.mp4', ".webm")
+  const webName = name.replace(".mp4", ".webm");
+  console.log(link);
   return (
     <Modal
       aria-labelledby="spring-modal-title"
@@ -16,10 +17,11 @@ const VideoModal = ({ open, setOpen, name }) => {
       open={open}
       onClose={handleClose}
       closeAfterTransition
+      width="100%"
     >
-      <Fade in={open}>
-        <Box className={s.videoModal}>
-          <video
+      <Fade  in={open}>
+        <Box  className={s.videoModal}>
+          {/* <video
             width={320}
             loop
             muted
@@ -32,7 +34,17 @@ const VideoModal = ({ open, setOpen, name }) => {
               src={`https://courseserver-production.up.railway.app/user/courses/video/${name}`}
               type="video/mp4"
             />
-          </video>
+          </video> */}
+          <div className={s.frameDiv}>
+            <iframe
+              src={link}
+              frameBorder="0"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowFullScreen
+              title="bbb.mp4"
+              width="100%"
+            ></iframe>
+          </div>
           <Typography id="spring-modal-description" sx={{ mt: 2 }}>
             {name}
           </Typography>
