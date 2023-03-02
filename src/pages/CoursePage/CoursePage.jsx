@@ -25,10 +25,10 @@ const CoursePage = () => {
         <h2>Контент: </h2>
         {videos
           .sort(function (a, b) {
-            if (a.name > b.name) {
+            if (a.id > b.id) {
               return 1;
             }
-            if (a.name < b.name) {
+            if (a.id < b.id) {
               return -1;
             }
             // a должно быть равным b
