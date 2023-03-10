@@ -1,59 +1,60 @@
-import React, { useState } from 'react'
-import s from './Storage.module.scss'
-import axios from '../../axios'
-import { Button, CircularProgress } from '@mui/material'
+import React, { useState } from "react";
+import s from "./Storage.module.scss";
+import axios from "../../axios";
+import { Button, CircularProgress, TextField } from "@mui/material";
+import { useForm } from "react-hook-form";
 
 export const Storage = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    defaultValues: {
+      name: "",
+      link: "",
+    },
+    mode: "onChange",
+  });
 
-    const [formData, setFormData] = useState(null)
-
-    const [isLoading, setIsLoading] = useState(false);
-    const [done, setDone] = useState(false)
-    const uploadFile = async () => {
-        try{
-            if(formData){
-                setIsLoading(true);
-                const res = await axios.post('/admin/uploadFile', formData);
-                if(res.data.code === 200){
-                    setDone(true);
-                    setIsLoading(false);
-                }
-            }
-        }catch(err){
-            console.log(err)
-        }
-    }
-
-    const handleChangeFile = async (event) => {
-        try{
-            const formData = new FormData()
-            const file = event.target.files[0];
-            formData.append('video', file);
-            setFormData(formData);
-        }catch(err){
-            console.log(err)
-        }
-    }
+  const onSubmit = async (result) => {
+    console.log(result);
+    await axios.post("/admin/createVideo", {
+      name: result.name,
+      link: result.link,
+    });
+  };
 
   return (
     <div className={s.main}>
-        <div className={s.upload}>
-
-            <img src="/upload.svg" alt="" width={100}/>
-            <h3>Выберите файл</h3>
-            <input type="file" onChange={handleChangeFile}/>
-            <Button onClick={uploadFile} variant="contained" disableElevation>
-                Загрузить
-            </Button>
-            {done && <>
-                <p>Файл успешно загружен!</p>
-            </>}
-            {isLoading && <CircularProgress />}
-        </div>
-        <div className={s.delete}>
-
-        </div>
+      <div className={s.upload}>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <h3>Заполните поля</h3>
+          <TextField
+            fullWidth
+            label="name"
+            className={s.textField}
+            placeholder="Введите name"
+            {...register("name", {
+              required: "Укажите название курса",
+              min: 4,
+            })}
+            error={Boolean(errors.name?.message)}
+            helperText={errors.name?.message}
+          />
+          <TextField
+            fullWidth
+            label="link"
+            className={s.textField}
+            placeholder="Введите ссылку"
+            {...register("link", { required: "Нужна ссылка", min: 4 })}
+            error={Boolean(errors.link?.message)}
+            helperText={errors.link?.message}
+          />
+          <button type="submit"> Загрузить </button>
+        </form>
+      </div>
+      <div className={s.delete}></div>
     </div>
-
-  )
-}
+  );
+};
