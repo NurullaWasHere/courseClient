@@ -4,10 +4,10 @@ import {  Modal, TextField, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import axios from "../../axios.js";
 import s from "./AdminCourseModal.module.scss";
-import UserList from "../UserList.jsx";
-import VideoList from "../VideoList.jsx";
-import UserListForDelete from "../UserListForDelete.jsx";
-import VideoListForDelete from "../VideoListForDelete.jsx";
+import UserList from "../UserList";
+import VideoList from "../VideoList";
+import UserListForDelete from "../UserListForDelete";
+import VideoListForDelete from "../VideoListForDelete";
 import debounce from "lodash.debounce";
 
 export default function AdminCourseModal({ open, setOpen, courseId }) {

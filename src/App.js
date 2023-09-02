@@ -1,9 +1,9 @@
-import Login from "./pages/Login/index.jsx";
+import Login from "./pages/Login/index";
 import s from "./App.module.scss";
-import { Main } from "./pages/Main/Main.jsx";
-import CoursePage from "./pages/CoursePage/CoursePage.jsx";
+import { Main } from "./pages/Main/Main";
+import CoursePage from "./pages/CoursePage/CoursePage";
 import { Routes, Route, useNavigate } from "react-router-dom";
-import AdminPage from "./pages/AdminPage/index.jsx";
+import AdminPage from "./pages/AdminPage/index";
 import { useEffect, useState } from "react";
 
 function App() {

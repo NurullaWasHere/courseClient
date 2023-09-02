@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import AdminCourseCard from "../AdminCourseCard.jsx";
+import AdminCourseCard from "../AdminCourseCard";
 import s from "./AdminCoursePageContent.module.scss";
-import axios from '../../axios.jsx'
+import axios from '../../axios'
 
 export default function AdminCoursePageContent() {
 
