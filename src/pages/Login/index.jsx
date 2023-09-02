@@ -4,14 +4,14 @@ import s from "./Login.module.scss";
 import { useForm } from "react-hook-form";
 import axios from "../../axios.js";
 import { useNavigate } from "react-router-dom";
-const fingerPrint = import('https://openfpcdn.io/fingerprintjs/v4')
-.then(FingerprintJS => FingerprintJS.load())
+import fg from'https://openfpcdn.io/fingerprintjs/v4';
 
 
-const Login = () => {
+const Login = async () => {
   const [isLoaded, setIsLoaded] = useState(false)
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
+  const fingerPrint = await fg.load();
 
   const {
     register,
