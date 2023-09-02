@@ -6,6 +6,7 @@
     "@chakra-ui/react": "^2.4.9",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
+    "@fingerprintjs/fingerprintjs": "^4.0.1",
     "@fingerprintjs/fingerprintjs-pro-react": "^2.2.0",
     "@mui/material": "^5.11.6",
     "@testing-library/jest-dom": "^5.16.5",
