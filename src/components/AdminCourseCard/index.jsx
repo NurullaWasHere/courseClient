@@ -6,7 +6,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { Link } from "react-router-dom";
-import AdminCourseModal from "../AdminCourseModal";
+import AdminCourseModal from "../AdminCourseModal/index.jsx";
 
 export default function AdminCourseCard({ id, name }) {
   const [open, setOpen] = React.useState(false);

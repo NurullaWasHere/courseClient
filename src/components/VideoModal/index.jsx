@@ -1,7 +1,6 @@
 import { Fade, Modal, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
-
 import s from "./VideoModal.module.scss";
 
 const VideoModal = ({ open, setOpen, name, link }) => {

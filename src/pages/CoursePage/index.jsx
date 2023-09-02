@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Header from "../../components/Header/Header";
-import { VideoLink } from "../../components/VideoLink/VideoLink";
+import Header from "../../components/Header/Header.jsx";
+import { VideoLink } from "../../components/VideoLink/VideoLink.jsx";
 import s from "./CoursePage.module.scss";
 import axios from "../../axios.js";
 

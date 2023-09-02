@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import Course from "../../components/Course/Course";
-import Header from "../../components/Header/Header";
+import Course from "../../components/Course/Course.jsx";
+import Header from "../../components/Header/Header.jsx";
 import s from "./Main.module.scss";
-import axios from "../../axios";
+import axios from "../../axios.js";
 import { useNavigate } from "react-router-dom";
 
 export const Main = () => {

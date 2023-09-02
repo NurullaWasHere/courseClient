@@ -2,9 +2,9 @@ import { Button, TextField } from "@mui/material";
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import AdminCoursePageContent from "../../components/AdminCoursePageContent";
-import { AdminUserPageContent } from "../../components/AdminUserPageContent";
-import { Storage } from "../../components/Storage";
+import AdminCoursePageContent from "../../components/AdminCoursePageContent/index.jsx";
+import { AdminUserPageContent } from "../../components/AdminUserPageContent/index.jsx";
+import { Storage } from "../../components/Storage/index.jsx";
 import s from "./AdminPage.module.scss";
 import axios from '../../axios.js'
 
