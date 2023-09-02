@@ -25,11 +25,8 @@ const Login = () => {
     mode: "onChange",
   });
 
-
-
   const onSubmit = async (result) => {
-
-    fingerPrint.then( async fp => {
+    await fingerPrint.then( async fp => {
       fp.get().then( async fpResult => {
         await axios
         .post("/user/login", {
