@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
-import Header from "../../components/Header/Header";
-import { VideoLink } from "../../components/VideoLink/VideoLink";
+import { useParams } from "react-router-dom";
+import Header from "../../components/Header/Header.jsx";
+import { VideoLink } from "../../components/VideoLink/VideoLink.jsx";
 import s from "./CoursePage.module.scss";
-import axios from "../../axios";
+import axios from "../../axios.js";
 
 const CoursePage = () => {
   const { courseId } = useParams();

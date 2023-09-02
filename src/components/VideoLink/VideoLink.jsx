@@ -5,8 +5,7 @@ import {
   Typography,
 } from "@mui/material";
 import React from "react";
-import AdminCourseModal from "../AdminCourseModal";
-import VideoModal from "../VideoModal";
+import VideoModal from "../VideoModal.jsx";
 import s from "./VideoLink.module.scss";
 
 export const VideoLink = ({ id, name, link }) => {

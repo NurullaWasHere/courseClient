@@ -2,7 +2,7 @@ import { CircularProgress, TextField } from "@mui/material";
 import React, {  useState } from "react";
 import s from "./Login.module.scss";
 import { useForm } from "react-hook-form";
-import axios from "../../axios";
+import axios from "../../axios.js";
 import { useNavigate } from "react-router-dom";
 const fingerPrint = import('https://openfpcdn.io/fingerprintjs/v4')
 .then(FingerprintJS => FingerprintJS.load())

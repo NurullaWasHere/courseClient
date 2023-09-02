@@ -1,7 +1,7 @@
 import { Button } from "@mui/material";
 import React, { useState } from "react";
 import s from "./VideoList.module.scss";
-import axios from "../../axios";
+import axios from "../../axios.js";
 
 const VideoList = ({ id, name, courseId }) => {
   const [added, setAdded] = useState(false);

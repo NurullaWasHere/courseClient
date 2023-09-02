@@ -1,13 +1,12 @@
 import { Button, TextField } from "@mui/material";
 import React, { useEffect } from "react";
 import { useState } from "react";
-import { Link, Router, useNavigate } from "react-router-dom";
-import AdminCourseCard from "../../components/AdminCourseCard";
-import AdminCoursePageContent from "../../components/AdminCoursePageContent";
-import { AdminUserPageContent } from "../../components/AdminUserPageContent";
-import { Storage } from "../../components/Storage";
+import { Link, useNavigate } from "react-router-dom";
+import AdminCoursePageContent from "../../components/AdminCoursePageContent.jsx";
+import { AdminUserPageContent } from "../../components/AdminUserPageContent.jsx";
+import { Storage } from "../../components/Storage.jsx";
 import s from "./AdminPage.module.scss";
-import axios from '../../axios'
+import axios from '../../axios.js'
 
 const AdminPage = ({ name }) => {
   const [isContentChanged, setIsContentChanged] = useState(false);
@@ -19,7 +18,7 @@ const AdminPage = ({ name }) => {
 
   const onClickHandler = async ( ) => {
     try{
-      const res = await axios.post('/admin/createCourse', {name: courseName});
+      await axios.post('/admin/createCourse', {name: courseName});
     }catch(err){
       console.log(err)
     }
@@ -40,7 +39,6 @@ const AdminPage = ({ name }) => {
     }
   }, [])
 
-  const [bar, setBar] = useState(1);
   return (
     <div className={s.admin}>
       <div className={s.header}>

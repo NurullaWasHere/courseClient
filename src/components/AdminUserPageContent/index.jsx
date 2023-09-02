@@ -1,8 +1,8 @@
 import { Button, TextField } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import s from "./AdminUserPageContent.module.scss";
-import axios from "../../axios";
+import axios from "../../axios.js";
 import debounce from "lodash.debounce";
 
 export const AdminUserPageContent = () => {

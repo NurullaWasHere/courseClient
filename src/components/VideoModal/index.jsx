@@ -1,15 +1,11 @@
 import { Fade, Modal, Typography } from "@mui/material";
 import { Box } from "@mui/system";
-import React, { useRef } from "react";
+import React from "react";
 
 import s from "./VideoModal.module.scss";
 
 const VideoModal = ({ open, setOpen, name, link }) => {
   const handleClose = () => setOpen(false);
-
-  const movName = name.replace(".mp4", ".mov");
-  const webName = name.replace(".mp4", ".webm");
-  console.log(link);
   return (
     <Modal
       aria-labelledby="spring-modal-title"

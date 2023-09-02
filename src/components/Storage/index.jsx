@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import s from "./Storage.module.scss";
-import axios from "../../axios";
-import { Button, CircularProgress, TextField } from "@mui/material";
+import axios from "../../axios.js";
+import {TextField } from "@mui/material";
 import { useForm } from "react-hook-form";
 
 export const Storage = () => {
