@@ -10,9 +10,6 @@ const Login = async () => {
   const [isLoaded, setIsLoaded] = useState(false)
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
-  const fingerPrint = await load();
-  const visitorIdentifier = await fingerPrint.get();
-  console.log(visitorIdentifier);
   const {
     register,
     handleSubmit,
@@ -26,6 +23,9 @@ const Login = async () => {
   });
 
   const onSubmit = async (result) => {
+    const fingerPrint = await load();
+    const visitorIdentifier = await fingerPrint.get();
+    console.log(visitorIdentifier);
     await axios
     .post("/user/login", {
       name: result.name,
