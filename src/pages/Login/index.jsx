@@ -1,15 +1,15 @@
 import { CircularProgress, TextField } from "@mui/material";
-import React, {  useState } from "react";
+import React from 'react';
 import s from "./Login.module.scss";
 import { useForm } from "react-hook-form";
 import axios from "../../axios.js";
 import { useNavigate } from "react-router-dom";
 import {load} from '@fingerprintjs/fingerprintjs';
 
-const Login = async () => {
-  const [isLoaded, setIsLoaded] = useState(false)
+const Login = () => {
+  const [isLoaded, setIsLoaded] = React.useState(false)
   const navigate = useNavigate();
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = React.useState(false);
   const {
     register,
     handleSubmit,
