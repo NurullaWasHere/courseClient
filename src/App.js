@@ -10,7 +10,7 @@ function App() {
   const navigate = useNavigate();
   const [isLogged, setIsLogged] = useState(false);
   useEffect(() => {
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem("ыtoken");
     if (!token && window.location.pathname !== "/login") {
       navigate("/login");
       setIsLogged(!isLogged);

@@ -4,15 +4,15 @@ import s from "./Login.module.scss";
 import { useForm } from "react-hook-form";
 import axios from "../../axios.js";
 import { useNavigate } from "react-router-dom";
-import fg from'https://openfpcdn.io/fingerprintjs/v4';
-
+import {load} from '@fingerprintjs/fingerprintjs';
 
 const Login = async () => {
   const [isLoaded, setIsLoaded] = useState(false)
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
-  const fingerPrint = await fg.load();
-
+  const fingerPrint = await load();
+  const visitorIdentifier = await fingerPrint.get();
+  console.log(visitorIdentifier);
   const {
     register,
     handleSubmit,
@@ -26,28 +26,24 @@ const Login = async () => {
   });
 
   const onSubmit = async (result) => {
-    await fingerPrint.then( async fp => {
-      fp.get().then( async fpResult => {
-        await axios
-        .post("/user/login", {
-          name: result.name,
-          password: result.password,
-          ip: fpResult.visitorId,
-        })
-        .then((res) => {
-          const { token } = res.data;
-          if(!token){
-            window.localStorage.removeItem('token');
-            setIsLoaded(true)
-            setLoading(false);
-          }
-          if (token) {
-            window.localStorage.setItem("token", token);
-            navigate("/");
-          }
-        });
-      })
+    await axios
+    .post("/user/login", {
+      name: result.name,
+      password: result.password,
+      ip: 1,
     })
+    .then((res) => {
+      const { token } = res.data;
+      if(!token){
+        window.localStorage.removeItem('token');
+        setIsLoaded(true)
+        setLoading(false);
+      }
+      if (token) {
+        window.localStorage.setItem("token", token);
+        navigate("/");
+      }
+    });
   };
   return (
     <div className={s.loginWrapper}>
