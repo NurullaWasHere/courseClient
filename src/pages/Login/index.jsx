@@ -25,12 +25,12 @@ const Login = () => {
   const onSubmit = async (result) => {
     const fingerPrint = await load();
     const visitorIdentifier = await fingerPrint.get();
-    console.log(visitorIdentifier);
+    console.log(visitorIdentifier.visitorId);
     await axios
     .post("/user/login", {
       name: result.name,
       password: result.password,
-      ip: 1,
+      ip: visitorIdentifier.visitorId,
     })
     .then((res) => {
       const { token } = res.data;
